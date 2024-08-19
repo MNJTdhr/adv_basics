@@ -1,4 +1,4 @@
-import 'package:flutterr_quiz/models/question_blueprint.dart';
+import '/models/question_blueprint.dart';
 
 const questions = [
   QuestionBlueprint(
