@@ -2,57 +2,44 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen(this.changeScreen, {super.key});
+  const StartScreen(this.startQuiz, {super.key});
 
-  final Function changeScreen;
+  final void Function() startQuiz;
 
   @override
-  Widget build(BuildContext context) {
-    onPressed() {
-      changeScreen();
-    }
-
+  Widget build(context) {
     return Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image.asset(
-              'assets/images/quiz-logo.png',
-              width: 250,
+          Image.asset(
+            'assets/images/quiz-logo.png',
+            width: 300,
+            color: const Color.fromARGB(150, 255, 255, 255),
+          ),
+          // Opacity(
+          //   opacity: 0.6,
+          //   child: Image.asset(
+          //     'assets/images/quiz-logo.png',
+          //     width: 300,
+          //   ),
+          // ),
+          const SizedBox(height: 80),
+          Text(
+            'Learn Flutter the fun way!',
+            style: GoogleFonts.lato(
+              color: const Color.fromARGB(255, 237, 223, 252),
+              fontSize: 24,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              "Flutter is Fun!",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.lato(
-                color: Colors.white,
-                fontSize: 30,
-              ),
+          const SizedBox(height: 30),
+          OutlinedButton.icon(
+            onPressed: startQuiz,
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ElevatedButton.icon(
-              onPressed: onPressed,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 27, 0, 79),
-                foregroundColor: Colors.white,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
-              icon: const Icon(Icons.arrow_forward_ios),
-              label: const Text(
-                'Start Quiz',
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-            ),
+            icon: const Icon(Icons.arrow_right_alt),
+            label: const Text('Start Quiz'),
           )
         ],
       ),
