@@ -1,6 +1,6 @@
-# flutterr_quiz
+# flutterr_adv_basics
 
-A new Flutter project, that can ask some question and count performance!
+A new Flutter project, for debugging!
 
 <!-- ## Getting Started
 
